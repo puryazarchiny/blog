@@ -1,5 +1,5 @@
-import { createServer } from "node:http";
+import App from "./app.js";
 
-const server = createServer((_, res) => res.end("The server response"));
+const app = new App();
 
-server.listen(3000, () => console.log("The server is listening at port 3000"));
+app.listen();

@@ -6,8 +6,12 @@
     "dev": "node --watch dist/index.js",
     "start": "node dist/index.js"
   },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
+    "@types/express": "^5.0.0",
     "@types/node": "^22.10.1",
     "eslint": "^9.16.0",
     "globals": "^15.13.0",
