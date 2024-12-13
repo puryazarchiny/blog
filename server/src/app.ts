@@ -1,11 +1,16 @@
 import express from "express";
 
-export default class App {
-  private readonly app = express();
+import postRouter from "./routers/post.js";
 
-  public listen(port = 3000) {
-    this.app.listen(port, () =>
-      console.log(`\n🟢 The server is listening at port ${port}\n`)
-    );
-  }
-}
+const app = express();
+const PORT = 3000;
+
+/**
+ * Routers
+ */
+app.use("/api/v1/posts", postRouter);
+
+/**
+ * Server
+ */
+app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
