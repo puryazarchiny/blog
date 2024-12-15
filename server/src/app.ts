@@ -1,17 +1,23 @@
 import express from "express";
 
-import config from "./config/index.js";
-import postRouter from "./routers/post.js";
+import { PORT } from "./config/index.js";
+import { postRouter } from "./routers/index.js";
 
-const app = express();
-const PORT = config.PORT;
+export default class App {
+  private readonly app = express();
+  private readonly PORT = PORT;
 
-/**
- * Routers
- */
-app.use("/api/v1/posts", postRouter);
+  constructor() {
+    this.initRouters();
+  }
 
-/**
- * Server
- */
-app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+  private initRouters() {
+    this.app.use("/api/v1/posts", postRouter);
+  }
+
+  public listen() {
+    this.app.listen(this.PORT, () =>
+      console.log(`http://localhost:${this.PORT}`)
+    );
+  }
+}

@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rm -fr dist && tsc --watch",
-    "dev": "node --env-file=.env --watch dist/app.js",
-    "start": "node --env-file=.env dist/app.js"
+    "dev": "node --env-file=.env --watch dist/index.js",
+    "start": "node --env-file=.env dist/index.js"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "mongoose": "^8.9.0"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
